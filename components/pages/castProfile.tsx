@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import Image from "next/image"
+import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import Movie from "../movie";
 import Carousel from 'react-bootstrap/Carousel';
@@ -84,7 +84,7 @@ export default function CastProfile({ data, cast, crew }: {
                         <Carousel.Item key={crew.indexOf(movie)}>
                             <div className="selectedCastMovie" style={{
                                 backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
-                               
+
                             }}>
                                 <div className="castInfoBackground">
                                     <h1>{data.name}</h1>
@@ -111,38 +111,38 @@ export default function CastProfile({ data, cast, crew }: {
 
 
 
-            {castMovies &&
-                <main>
-                    <h1>Cast</h1>
+                {castMovies &&
+                    <main>
+                        <h1>Cast</h1>
 
-                    <div className=' flex flex-row flex-wrap place-content-center '>
-                        {castMovies.map((item: any) =>
-                            <div key={cast.indexOf(item)} className=' p-1 m-1 flex flex-column justify-center content-center'>
+                        <div className=' flex flex-row flex-wrap place-content-center '>
+                            {castMovies.map((item: any) =>
+                                <div key={cast.indexOf(item)} className=' p-1 m-1 flex flex-column justify-center content-center'>
 
-                                <Movie movie={item} width={7} />
+                                    <Movie movie={item} width={7} />
 
-                            </div>
-                        )
-                        }</div></main>}
+                                </div>
+                            )
+                            }</div></main>}
 
 
-            {crewMovies &&
-                <main>
-                    <h1>Crew</h1>
+                {crewMovies &&
+                    <main>
+                        <h1>Crew</h1>
 
-                    <div className=' flex flex-row flex-wrap  place-content-center '>
-                        {crewMovies.map((item: any) =>
-                            <div key={crew.indexOf(item)} className=' p-1 m-1 flex flex-column justify-center content-center'>
+                        <div className=' flex flex-row flex-wrap  place-content-center '>
+                            {crewMovies.map((item: any) =>
+                                <div key={crew.indexOf(item)} className=' p-1 m-1 flex flex-column justify-center content-center'>
 
-                                <Movie movie={item} width={7} />
+                                    <Movie movie={item} width={7} />
 
-                            </div>
-                        )
-                        }</div></main>}
+                                </div>
+                            )
+                            }</div></main>}
 
-</div>
+            </div>
 
         </div>
-        
+
     )
 }
