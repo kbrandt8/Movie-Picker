@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { getUserAccount, getUserInfo } from '@/utils/getUser';
 import { cookies } from 'next/headers'
-export default async function LoginButton({loggedIn,session}:{loggedIn:boolean,session:string}) {
+export default async function LoginButton({ loggedIn, session }: { loggedIn: boolean, session: string }) {
 
 
   if (loggedIn) {
@@ -33,7 +33,7 @@ export default async function LoginButton({loggedIn,session}:{loggedIn:boolean,s
       <Navbar className="bg-body-tertiary">
         <Container>
           <Link href={`/login/`}>
-            <Button >Log in?</Button>
+            <Button >Log in</Button>
           </Link>
         </Container>
       </Navbar>
