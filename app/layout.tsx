@@ -18,18 +18,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const session = cookieStore.get('movieSession')?.value || ""
   const loggedIn = session ? true : false;
 
   return (
     <html lang="en">
-     
+
       <body className={inter.className}>
-         <Header session={session} loggedIn={loggedIn}/>
+        <Header session={session} loggedIn={loggedIn} />
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   )
 }
